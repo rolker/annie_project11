@@ -1,0 +1,10 @@
+
+project11/platforms/annie:
+  robot_description: annie/robot_description
+  width: 3.7
+  length: 12.2
+  nav_sources:
+    combined:
+      position_topic: /annie/nav/position
+      orientation_topic: /annie/nav/orientation
+      velocity_topic: /annie/nav/velocity

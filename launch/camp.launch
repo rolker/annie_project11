@@ -1,0 +1,15 @@
+<launch>
+  <arg name="namespace" default="operator"/>
+  <arg name="robotNamespace" default="annie"/>
+  <arg name="backgroundChart" default="$(find camp)/workspace/gfoe/background_maps/R600-YS-UTM12N-v2-meters.tif"/>
+
+
+  <node pkg="camp" type="CCOMAutonomousMissionPlanner" name="camp"  args="$(find camp)/workspace/ $(arg backgroundChart)" ns="$(arg namespace)">
+    <param name="robotNamespace" value="$(arg robotNamespace)"/>
+  </node>
+
+  <rosparam command="load" file="$(find annie_project11)/config/annie_operator.yaml" ns="$(arg namespace)"/>
+
+</launch>
+
+
